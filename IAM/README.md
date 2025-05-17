@@ -32,9 +32,13 @@ An IAM group is a collection of users. All users in the group inherit the permis
 3. Groups cannot belong to groups.
 
 ## IAM role (role-based access)
-IAM role is an indentiy that can be assumed by someone (external identity provider) or something (AWS Servie) who needs temporary access to AWS Credential to perform an action in an AWS account. 
+IAM role is an indentiy that can be assumed by someone (external identity provider, AWS account) or something (AWS Servie) who needs temporary access to AWS Credential to perform an API call in an AWS account. 
 External identity provider can be manage with AWS IAM Identity Center. 
+Each IAM role comes with an ARN: Amazon Resource Name
 
 # IAM Policies
 To manage access to identities (authentication) and provide permissions (authorization) to AWS services and resources.
 Least privilege is a standard security principle that advises you to grant only the necessary permissions to do a particular job and nothing more.
+
+## Permissions policies 
+This is a collection of permissions, mostly managed by AWS or created by users
