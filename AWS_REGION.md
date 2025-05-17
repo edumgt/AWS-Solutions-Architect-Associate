@@ -7,7 +7,7 @@
 
 ## Availability Zones
 
-Each region has many abailability zones. Each availability zone is one or more data centers. They AZ are isolated for disasters
+Each region has many abailability zones. Each availability zone is one or more data centers with redundant power. They AZ are isolated for disasters
 
 # Global Services
 IAM
@@ -19,3 +19,10 @@ EC2 (IaaS)
 Elastic Beanstalk (PaaS)
 Lambda (FaaS)
 Rekognition (SaaS)
+
+# Interact with AWS:
+1. Console
+2. AWS CLI (with AWS CloudShell or Local Terminal)
+3. AWS SDK (code with programming languages)
+
+https://aws.amazon.com/compliance/shared-responsibility-model/
