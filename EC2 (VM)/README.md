@@ -11,12 +11,12 @@ For high availability, consider using at least two EC2 instances in two separate
 You must define the following: 
 - Hardware specifications: 
     - Instance type: CPU, Memory and GPU (optional). Instance families: General purpose, Compute optimized, Memory optimized, Accelerated computing, Storage optimized and HPC optimized.
-    - network
-    - storage
+    - network (VPC)
+    - storage (EBS Volume and Lifecycle Manager)
 - Logical configurations: 
-    - Networking location
-    - firewall rules
-    - authentication
+    - Networking location (VPC)
+    - firewall rules (Security Group)
+    - authentication (Key Pairs)
     - operating system (AMI)
 
 # Amazon Machine Image (AMI)
@@ -34,6 +34,8 @@ AMIs can comes from:
 ![LifeCycle](/img/lifecycle2.png)
 
 # Pricing
+We recommend Savings Plans over Reserved Instances
+
 - On-Demand instances: only pay the specified hourly rates for the instance that you use.
 - Spot instances: Users with fault-tolerant or stateless workloads    
 - Saving plans:  low usage prices for a 1-year or 3-year term commitment to a consistent amount of usage
