@@ -16,8 +16,20 @@ Every instance must live inside of a VPC
 -   A best practice to maintain redundancy and fault tolerance, create at least two subnets configured in two Availability Zones.
 -   AWS reserves five IP addresses in each subnet. These IP addresses are used for: VPC local routing, Domain Name System (DNS), Future use, network broadcast address and network address.
 
+### Route Table
+A route table contains a set of rules, called routes, that are used to determine where network traffic is directed.
+###### Main route table
+- When you create a VPC, AWS creates a route table called the main route table. 
+- The default configuration of the main route table is to allow traffic between all subnets in the local network
+- You can add, remove, and modify routes in the main route table.
+###  Custom route table
+- The main route table is used implicitly by subnets that do not have an explicit route table association like a Custom route table.
+- Each custom route table that you create will have the local route already inside it, allowing communication to flow between all resources and subnets inside the VPC. 
+- You can protect your VPC by explicitly associating each new subnet with a custom route table and leaving the main route table in its original default state.
+
 ### Security group
 Security group is an instance level firewall that will allow or deny traffic to reach the instance
+
 
 ### Gateways
 ###### Internet gateway
