@@ -27,9 +27,20 @@ A route table contains a set of rules, called routes, that are used to determine
 - Each custom route table that you create will have the local route already inside it, allowing communication to flow between all resources and subnets inside the VPC. 
 - You can protect your VPC by explicitly associating each new subnet with a custom route table and leaving the main route table in its original default state.
 
-### Security group
-Security group is an instance level firewall that will allow or deny traffic to reach the instance
+### Security
+###### Access control list (ACL)
+Think of a network access control list (network ACL) as a virtual firewall at the subnet level. Allow and deny type of rules are allowed to be defined.
+Network ACLs are considered stateless, so you need to include both the inbound and outbound ports used for the protocol
+- Default network ACL: configured by default to allow incoming and outgoing traffic
+- Custom network ACL
+###### Security group
+Security group is an instance level firewall that will allow traffic to reach the instance.
+SG is not optional when an instance is created.
+The default configuration of a security group blocks all inbound traffic and allows all outbound traffic. 
+To allow inbound traffic, you must create inbound (only allow) rules.
+A common design pattern is to organize resources into different groups and create security groups for each to control network communication between them.
 
+![security_groups](/img/security_groups.jpg)
 
 ### Gateways
 ###### Internet gateway
