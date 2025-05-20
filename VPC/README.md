@@ -18,7 +18,7 @@ Every instance must live inside of a VPC
 -   Subnets are created in Availability Zone level and can be more than one in each AZ
 
 ### Route Table
-A route table contains a set of rules, called routes, that are used to determine where network traffic is directed.
+A route table contains a set of rules, called routes, that are used to determine **where network traffic is directed**.
 Route Table can be attached to a subnet. Not to a VPC
 ###### Main route table
 - When you create a VPC, AWS creates a route table called the main route table. 
@@ -34,7 +34,8 @@ Route Table can be attached to a subnet. Not to a VPC
 
 ### Security
 ###### Access control list (ACL)
-Think of a network access control list (network ACL) as a virtual firewall at the subnet level. Allow and deny type of rules are allowed to be defined.
+Think of a network access control list (network ACL) as a virtual firewall at the subnet level. 
+Allow and deny type of rules are allowed to be defined in the ACL.
 Network ACLs are considered stateless, so you need to include both the inbound and outbound ports used for the protocol
 - Default network ACL: configured by default to allow incoming and outgoing traffic
 - Custom network ACL
@@ -46,6 +47,8 @@ To allow inbound traffic, you must create inbound (only allow) rules.
 A common design pattern is to organize resources into different groups and create security groups for each to control network communication between them.
 
 ![security_groups](/img/security_groups.jpg)
+
+    Route tables to control outbound traffic mainly and Security (ACL and Security Group) to control how traffic ingress to vpc
 
 ### Gateways
 ###### Internet gateway
