@@ -1,3 +1,4 @@
+https://aws.amazon.com/efs/
 
 # File Storage
 In file storage, data is stored as files in a tree-like hierarchy that consist of folders and subfolders. 
@@ -12,3 +13,19 @@ This storage is typically mounted onto multiple hosts, and requires file locking
 - Analytics: analytics workloads which interact with data through a file interface and rely on features such as file lock or writing to portions of a file.
 - Media and entertainment: businesses that use a hybrid cloud deployment and need standardized access using file system protocols (NFS or SMB) or concurrent protocol access
 - Home directories: Businesses wanting to take advantage of the scalability and cost benefits of the cloud are extending access to home directories for many of their users.
+
+# Amazon Elastic File System (Amazon EFS)
+File system that automatically grows and shrinks as you add and remove files.
+Amazon EFS can be used with AWS compute services and on-premises resources.
+You pay only for the storage used.
+
+Storage classes:
+- Standard storage classes: offer Multi-AZ resilience and the highest levels of durability and availability.
+- One zone storage classes: provide additional savings by saving your data in a single availability zone.
+
+# Amazon FSx
+With Amazon FSx, you can choose between four widely used file systems: 
+- Lustre
+- NetApp ONTAP
+- OpenZFS
+- Windows File Server.
