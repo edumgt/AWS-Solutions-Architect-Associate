@@ -21,6 +21,7 @@ Amazon EFS can be used with AWS compute services and on-premises resources.
 You pay only for the storage used.
 Tens, hundreds, or even thousands of compute instances can access an Amazon EFS file system at the same time.
 All files and directories are redundantly stored within and across multiple Availability Zones
+Serveless
 
 Storage classes:
 - Standard storage classes: offer Multi-AZ resilience and the highest levels of durability and availability.
