@@ -47,7 +47,6 @@ We recommend Savings Plans over Reserved Instances
 
 To increase availability, you need redundancy. This typically means more infrastructure—more data centers, more servers, more databases, and more replication of data. 
 
-
 High availability involves the following challenges:
 - Replication process: replicate the configuration files, software patches, and application across instances. The best method is to automate where you can.
 - Customer redirection:  The most common is using a Domain Name System (DNS) where the client uses one record that points to the IP address of all available servers. Another option is to use a load balancer, which takes care of health checks and distributing the load across each server.
