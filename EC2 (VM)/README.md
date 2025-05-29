@@ -53,3 +53,26 @@ High availability involves the following challenges:
 - Types of high availability
     - active-passive: only one of the two instances is available at a time. One advantage of this method is that for stateful applications 
     - active-active: A disadvantage of an active-passive system is scalability. Both servers are available, the second server can take some load for the application, and the entire system can take more load. Stateless applications work better for active-active systems.
+
+## Auto Scaling
+
+- Vertical Scaling: Increase the instance size, while the instance is in a stopped state. With active-passive systems, you need vertical scaling. 
+Stop the passive instance and increase the size. Then shift the tfraffic from active to passive instance. finally, stop and change the size of the other instance.
+it’s actually a lot of manual work. Another disadvantage is that a server can only scale vertically up to a certain limit.
+- Horizontal Scaling: Add additional instances. Ideal for active-active systems.
+
+Features:
+- Automatically scales in and out based on demand.
+- Scales based on user-defined schedules.
+- Automatically replaces unhealthy EC2 instances.
+- Uses machine learning (ML) to help schedule the optimum number of EC2 instances.
+
+Components:
+- Launch template (recommended) and configuratios: It also supports versioning, which can be used for quickly rolling back if there's an issue or a need to specify a default version of the template. Create a template: from an existing template, from an existing instance or creating directly.
+- Amazon EC2 Auto Scaling groups: Minimum capacity, Desired capacity (initial state) and Maximum capacity
+- Scaling policies:
+    - simple: You use a CloudWatch alarm and specify what to do when it is invoked.
+    - step: Step scaling policies respond to additional alarms even when a scaling activity or health check replacement is in progress
+    - target tracking scaling: If your application scales based on average CPU utilization, average network utilization (in or out), or request count, then this scaling policy type is the one to use. All you need to provide is the target value to track, and it automatically creates the required CloudWatch alarms.
+
+![autoscaling](/img/auto_scaling_group.png)

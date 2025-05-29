@@ -3,6 +3,9 @@ https://aws.amazon.com/elasticloadbalancing/features/#Product_comparisons
 # Load Balancer
 Load balancing refers to the process of distributing tasks across a set of resource.
 the load balancer needs to take all the traffic and redirect it to the backend servers based on an algorithm.
+Regional service and highly available.
+Auto-scale.
+Internal LB route requests from clients with private IP address to targets with a private IP address
 
 # Elastic Load Balancer
 
@@ -56,6 +59,6 @@ It provides a gateway for distributing traffic across multiple virtual appliance
 - Layer 3 gateway and Layer 4 load balancing
 - Health checks
 - Gateway Load Balancer Endpoints
-- Higher availability for third-party virtual appliances
+- Higher availability for **third-party** virtual appliances
 - Can be monitored using CloudWatch metrics.
 - Connects internet gateways, virtual private clouds (VPCs), and other network resources over a private network.
