@@ -24,6 +24,7 @@ An IAM user represents a person or service that interacts with AWS. You define t
 
 - BP: You can group IAM users and attach permissions at the group level.
 - consider managing employee identity information through an identity provider (IdP). Using an IdP, whether it's with an AWS service such as AWS IAM Identity Center (successor to AWS Single Sign-On) or a third-party identity provider, provides a single source of truth for all identities in your organization. Now You can use IAM roles to provide permissions to identities that are federated from your IdP
+- credentials (console, AWS CLI & AWS SDK) associated to.
 
 ## IAM Groups
 An IAM group is a collection of users. All users in the group inherit the permissions assigned to the group. 
@@ -39,6 +40,7 @@ Each IAM role comes with an ARN: Amazon Resource Name
 # IAM Policies
 To manage access to identities (authentication) and provide permissions (authorization) to AWS services and resources.
 Least privilege is a standard security principle that advises you to grant only the necessary permissions to do a particular job and nothing more.
+permission over resources with specific conditions. Permissiones are assigned to users. 
 
 ## Permissions policies 
-This is a collection of permissions, mostly managed by AWS or created by users
+This is a collection of permissions, mostly managed by AWS or created by users.
