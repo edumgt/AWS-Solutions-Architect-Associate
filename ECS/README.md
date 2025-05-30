@@ -2,7 +2,8 @@ https://aws.amazon.com/ecs/
 https://aws.amazon.com/containers/services/
 
 # Container
-A container is a standardized unit that packages your code and its dependencies. This package is designed to run reliably on any platform, because the container creates its own independent environment
+A container is a standardized unit that packages your code and its dependencies. This package is designed to run reliably on any platform, because the container creates its own independent environment.
+There are no time-out limits when running. This is useful for applications that run longer than 15 minutes or that need to initiate instantly when called.
 
 # Amazon Elastic Container Service (Amazon ECS)
 

@@ -20,6 +20,8 @@ You must define the following:
     - authentication (Key Pairs)
     - operating system (AMI)
 
+You can scale capacity as needed, both up and down. This means that if you need more memory, processing, or storage, you can add it.
+
 # Amazon Machine Image (AMI)
 EC2 instances are live instantiations (or versions) of what is defined in an Amazon Machine Image (AMI)
 you can create an AMI from your running instance and use the AMI to start a new instance.
@@ -46,6 +48,7 @@ We recommend Savings Plans over Reserved Instances
 
 ## Availability
 
+Instances offer at least 99.99% (four nines) of availability
 To increase availability, you need redundancy. This typically means more infrastructure—more data centers, more servers, more databases, and more replication of data. 
 
 High availability involves the following challenges:

@@ -18,4 +18,6 @@ You deploy your Lambda function code using a deployment package. Lambda supports
 
 Pricing: You are charged for the number of times that your code is invoked (requests) and for the time that your code runs
 
-This service is not for long-running proceses like deep learning or batch jobs.
+This service is not for long-running proceses like deep learning or batch jobs. If an application needs to run longer than 15 minutes, it's no longer cost effective to use Lambda. Instead, consider other solutions.
+
+Lambda runs your function in multiple Availability Zones to ensure that it is available to process events in case of a service interruption in a single zone. 
