@@ -42,6 +42,7 @@ We recommend Savings Plans over Reserved Instances
 - Saving plans:  low usage prices for a 1-year or 3-year term commitment to a consistent amount of usage
 - Reserved instances
 - Dedicated hosts
+- You are not billed if an instance is in a stopped state.
 
 ## Availability
 
