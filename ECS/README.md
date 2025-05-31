@@ -5,6 +5,14 @@ https://aws.amazon.com/containers/services/
 A container is a standardized unit that packages your code and its dependencies. This package is designed to run reliably on any platform, because the container creates its own independent environment.
 There are no time-out limits when running. This is useful for applications that run longer than 15 minutes or that need to initiate instantly when called.
 
+Use case:
+- Applications that are compute intensive run better in a container environment. If you have a small application that runs under in 15 minutes but is compute intensive, consider using a container. 
+- Large monoliths that have many parts are very suitable applications to consider moving to containers. 
+- microservices, using containers to isolate processes.
+- With containers, you can package entire applications and move them to the cloud without the need to make any code changes. 
+- Dont use When applications need persistent data storage
+- Dont use When applications have complex networking, routing, or security requiremen
+
 # Amazon Elastic Container Service (Amazon ECS)
 
 ![ecs](/img/ecsconstruct3.png)

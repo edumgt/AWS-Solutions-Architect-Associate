@@ -21,3 +21,9 @@ Pricing: You are charged for the number of times that your code is invoked (requ
 This service is not for long-running proceses like deep learning or batch jobs. If an application needs to run longer than 15 minutes, it's no longer cost effective to use Lambda. Instead, consider other solutions.
 
 Lambda runs your function in multiple Availability Zones to ensure that it is available to process events in case of a service interruption in a single zone. 
+
+Use case: 
+- small, simple, or modular application
+- applications less compute intensive
+- Serverless is a very appropriate fit when you need one action to invoke other workflows within AWS.
+- applications that don't run longer than 15 minutes.

@@ -22,6 +22,12 @@ You must define the following:
 
 You can scale capacity as needed, both up and down. This means that if you need more memory, processing, or storage, you can add it.
 
+Use case:
+- you can use instances for long-running, stateful applications.
+- You can determine the type and size or your storage, whether to use block or file storage.
+- workloads with heavy computational requirements.
+- Migrating from on premise
+
 # Amazon Machine Image (AMI)
 EC2 instances are live instantiations (or versions) of what is defined in an Amazon Machine Image (AMI)
 you can create an AMI from your running instance and use the AMI to start a new instance.
