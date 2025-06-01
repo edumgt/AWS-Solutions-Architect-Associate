@@ -5,6 +5,7 @@ https://aws.amazon.com/fsx/
 In file storage, data is stored as files in a tree-like hierarchy that consist of folders and subfolders. 
 Each file has metadata such as file name, file size, the creation date and a path. 
 When you need to retrieve a file, your system can use the path to find it in the file hierarchy.
+The two most common storage protocols for file storage are Server Message Block (SMB) and Network File System (NFS).
 
 ### Use Case:
 Ideal when you require centralized access to files that must be easily shared and managed by multiple host computers.

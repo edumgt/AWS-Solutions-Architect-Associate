@@ -11,7 +11,7 @@ block storage is optimized for low-latency operations, high-performance enterpri
 - Transactional workloads: transactional and fault-tolerant database
 - Containers: store containerized applications on the cloud
 - Virtual machines: supports popular virtual machine (VM) hypervisors
-
+- The storage device is used by the operating system or an application that has the capabilities to manage block storage directly. 
 ![EC2_Instacne_Block_Storage.png](/img/EC2_Instacne_Block_Storage.png)
 
 # Amazon EC2 instance store
