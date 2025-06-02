@@ -26,7 +26,8 @@ Use case:
 - Software delivery: host your software applications that customers can download.
 - Data lakes: because of its virtually unlimited scalability
 - Static website and content: host a static website and static content
-
+- The solution is also ideal for importing existing data stores for analytics, backup, or archive.
+s
 Security:
 - Amazon S3 is private by default.
 - You can choose to make your buckets and objects public. 
