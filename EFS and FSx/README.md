@@ -24,16 +24,34 @@ This storage is typically mounted onto multiple hosts, and requires file locking
 - Amazon FSx for Windows File Server
 
 # Amazon Elastic File System (Amazon EFS)
+The service uses a traditional file permissions model, file locking, and hierarchical directory structure using the NFSv4 protocol. 
 File system that automatically grows and shrinks as you add and remove files. Amazon EFS file systems can automatically scale from gigabytes to petabytes of data without needing to provision storage
 Amazon EFS can be used with AWS compute services and on-premises resources.
 You pay only for the storage used.
 Tens, hundreds, or even thousands of compute instances can access an Amazon EFS file system at the same time.
-All files and directories are redundantly stored within and across multiple Availability Zones
+All files and directories are redundantly stored within and across multiple Availability Zones by default
 Serveless
+Multiple compute modules can access an Amazon EFS file system at the same time. These modules include include Amazon EC2, AWS Lambda, AWS Fargate, Amazon Elastic Container Service (Amazon ECS), and Amazon Elastic Kubernetes Service (Amazon EKS). 
 
 Storage classes:
+You pay only for the storage used by your file system. No minimum fee and no set-up charges are incurred. 
 - Standard storage classes: offer Multi-AZ resilience and the highest levels of durability and availability.
-- One zone storage classes: provide additional savings by saving your data in a single availability zone.
+- One zone storage classes: provide additional savings by saving your data redundantly in a single availability zone.
+
+Features:
+- Supports authentication, authorization, and encryption capabilities to help you meet your security and compliance requirements. 
+- With EFS lifecycle management policies enabled, files automatically move from Amazon EFS Standard storage to EFS Standard-IA storage, or from Amazon EFS One Zone storage to EFS One Zone-IA storage. Lifecycle management reduces storage costs by up to 92 percent.
+- Security: Security groups and IAM 
+- On-premise can access through VPN or Direct connect to EFS
+
+Use case:
+- Migrate enterprise applications from on premises to the AWS Cloud
+- machine learning and big data analytics workloads. 
+- Media workflows often depend on shared storage to manipulate large files. Example workflows include video editing, studio production, broadcast processing, sound design, and rendering. 
+
+Modes:
+- The default General Purpose performance mode is ideal for latency-sensitive use cases
+- The default Bursting Throughput mode, throughput scales as your file system grows.
 
 # Amazon FSx
 native compatibility with third-party file systems
