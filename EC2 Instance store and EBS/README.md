@@ -22,13 +22,25 @@ This storage is located on disks that are physically attached to the host comput
 This ties the lifecycle of the data to the lifecycle of the EC2 instance.
 Instance store is ideal if you host applications that replicate data to other EC2 instances or cluster-based workloads
 EBS can only be attahced to EC2 instances
+An instance store provides submillisecond latencies between the EC2 instance and the storage.
+Instance store type depends on the type of the EC2 instance
+
+Use case:
+- Temporary storage of information that changes frequently, such as buffers, caches, scratch data, and other temporary content
+- Data that is replicated across a fleet of instances, such as a load-balanced pool of web servers
 
 # Amazon EBS
 Amazon Elastic Block Store is block-level storage that you can attach to an Amazon EC2 instance like an external drive. 
 it is automatically replicated in its Availability Zone to prevent data loss from single points of failure
 Amazon EBS provides the ability to create backups of any EBS volume.
 EBS snapshots are incremental backups that only save the blocks on the volume that have changed after your most recent snapshot. Snapshots are stored redundantly in multiple Availability Zones using Amazon S3. 
+Snapshot is a good way to take point-in-time backups of your data. 
+The same snapshot can be used to instantiate as many volumes as you want.
 EBS can only be attahced to EC2 instances
+For throughput and transaction-intensive workloads at any scale. 
+AWS recommends Amazon EBS for data that must be quickly accessible and requires long-term persistence.
+persist independently from the life of the instance
+With AWS Backup, you can centralize and automate data protection across multiple Amazon EBS volumes
 
 Features:
 - Detachable: You can detach an EBS volume from one EC2 instance and attach it to another EC2 instance in the same Availability Zone to access the data on it.
@@ -41,11 +53,17 @@ You can scale EBS volumes in two ways:
 - Attach multiple volumes to a single EC2 instance. You can add these additional volumes during or after EC2 instance creation
 
 Use case:
+- Lift and shift on-premises applications 
 - OS: Boot and root volumes can be used to store an operating system
-- Databse: As a storage layer for databases running on Amazon EC2
+- Databse (SQL & NoSQL): As a storage layer for databases running on Amazon EC2
 - Business-critical applications.
 - EBS allows you to resize clusters for big data analytics.
+- Resize Spark clusters for Analytics workloads
+- File systems on top of EBS
 
 Types:
-- SSD: frequent read/write operations with small I/O size
-- HDD: large streaming workloads 
+- SSD: frequent read/write operations with small I/O size. Transactional workloads, such as databases, virtual desktops, and boot volumes 
+- HDD: large streaming workloads. throughput-intensive workloads, such as MapReduce and log processing. 
+
+Pricing:
+Pricing for EBS volumes is based on the volume type, provisioned volume size, and the provisioned IOPS and throughput performance. EBS volume pricing varies based on the Availability Zone where it resides. The pricing for Amazon EBS snapshots is based on the actual amount of storage space that you use.
