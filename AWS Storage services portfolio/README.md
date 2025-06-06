@@ -37,7 +37,12 @@ The local gateway appliance maintains a cache of recently written or read data s
 # Data transfer and migration services
 Data transfer services are designed to copy or transfer your on-premises data to and from the core AWS Storage services in the AWS Cloud. 
 
-- AWS Transfer Family: provides fully managed support for file transfers directly into and out of Amazon S3 or Amazon EFS. AWS Transfer Family includes support for Secure File Transfer Protocol (SFTP), File Transfer Protocol over SSL (FTPS), and File Transfer Protocol (FTP). 
+- AWS Transfer Family: provides fully managed support for file transfers directly into and out of Amazon S3 or Amazon EFS. AWS Transfer Family includes support for Secure File Transfer Protocol (SFTP), File Transfer Protocol over SSL (FTPS), and File Transfer Protocol (FTP). AWS helps you migrate your file transfer workflows to AWS by integrating with existing authentication systems, and providing DNS routing with Amazon Route 53. Features:
+    - A fully managed service that scales in real time to meet your needs.
+    - You don't need to modify your applications or run any file transfer protocol infrastructure.
+    - Store the files you exchange as objects in your Amazon S3 bucket or Amazon EFS file system so that you can extract business insights faster.
+    - you pay for only the protocols you have enabled for access to your endpoint and the amount of data transferred over each of these protocols.
+    ![dataTransfer_infraestructure](/img/dataTransfer_infraestructure.png)
 - AWS DataSync: Migrate active datasets to AWS. Archive data to free up on-premises storage capacity. Replicate data to AWS for business continuity. Transfer data to the cloud for analysis and processing 
 - AWS Snow Family: Offline data transfers because there’s lack of consistent network connectivity.
 - AWS Application Migration Service: highly automated lift-and-shift (rehost) solution.
