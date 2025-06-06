@@ -14,20 +14,36 @@ you can store almost any type of data, and there is no limit to the number of ob
 
 # Amazon Simple Storage Service (Amazon S3)
 
+ Amazon S3 uses standards-based REST APIs designed to work with any internet-development toolkit. 
 you can retrieve your data from anywhere on the web.
 Object storage stores data in a flat structure. An object is a file combined with metadata.
 S3 is highly available with data replication across availability zones
 Each bucket name must be unique across all AWS accounts in all AWS Regions within a partition
 The object key (key name) uniquely identifies the object in an Amazon S3 bucket. 
 
+Features:
+- Moving and storing data across different S3 storage classes
+- Configuring and enforcing data access controls
+- Appending metadata tags to objects
+- Monitoring data at the object or bucket levels
+- Viewing storage usage and activity trends across your organization
+- Amazon S3 performance supports at least 3,500 requests per second to add data and 5,500 requests per second to retrieve data. Each S3 prefix can support these request rates, making it simple to increase performance significantly.
+- You can also enforce write-once-read-many (WORM) policies with S3 Object Lock. You can configure S3 Object Lock in one of two modes: Governance mode and Compliance mode (no user or root account can remove the protection). 
+- **S3 Storage Lens** includes drill-down options to generate insights at the organization, account, Region, bucket, or even prefix level.
+- Amazon S3 is also compatible with AWS analytics services such as Amazon Athena and Amazon Redshift Spectrum (complex queries and large datasets). you can run big data analytics directly on your data stored in Amazon S3. It works by retrieving a subset of an object’s data instead of the entire object, 
+
+
 Use case:
-- Backup and storage: back up files because it is highly redundant
+- Backup, Archive and storage: back up files because it is highly redundant
 - media hosting: ideal location to host video, photo, and music uploads.
 - Software delivery: host your software applications that customers can download.
-- Data lakes: because of its virtually unlimited scalability
+- Data lakes: because of its virtually unlimited scalability. AWS Lake Formation to quickly create a data lake and centrally define and enforce security, governance, and auditing policies
 - Static website and content: host a static website and static content
 - The solution is also ideal for importing existing data stores for analytics, backup, or archive.
-s
+- Websites and Mobile applications
+- IoT devices
+- with AWS PrivateLink, you can provision private endpoints in a VPC to allow direct access to S3 from on-premises using private IPs from your VPC. 
+
 Security:
 - Amazon S3 is private by default.
 - You can choose to make your buckets and objects public. 
@@ -40,6 +56,8 @@ Security:
 
 Storage Classes
 Amazon S3 storage classes let you change your storage tier when your data characteristics change.
+![s3_storage_classes](/img/s3_storage_classes.jpg)
+
 - Standard: this is the default storage class. general-purpose storage
 - S3 Intelligent-Tiering: Amazon S3 monitors access patterns of your data and automatically moves your data to the most cost-effective storage tier based on frequency of access. There are three tiers: a frequent access tier, an infrequent access tier, and an archive instance access tier.
 - Standard-Infrequent Access: data that is accessed less frequently but requires rapid access when needed
@@ -60,6 +78,12 @@ Buckets can be in one of three states:
 - Versioning-enable: After you version-enable a bucket, it can never return to an unversioned state
 - Versioning-suspended: Versioning is suspended for new objects.
 
-Amazon S3 lifecycle.
+Amazon S3 lifecycle:
 You can choose to automate between two types of actions: transition (to another storage class) and expiration (deleted).
 ![Storage_Lifecycle](/img/Storage_Lifecycle.png)
+
+S3 Batch Operations:
+- Copy objects between buckets
+- Replace object tag sets
+- Modify access controls,
+- Restore archived objects from Amazon S3 Glacier
