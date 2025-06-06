@@ -13,7 +13,7 @@ They provide a data transfer platform to copy your data in to and out from the A
         - Local compute and storage only
         - Import into Amazon S3: for data collection and local processing. When you return the device to AWS, your data is uploaded to your Amazon S3 bucket
         - Export from Amazon s3: After the device arrives, you copy data from your device to your local storage
-    - AWS Snowmobile service: AWS Snowmobile is an exabyte-scale data transfer service used to move large amounts of data to AWS
+    - AWS Snowmobile service: AWS Snowmobile is an exabyte-scale data transfer service used to move large amounts of data to AWS. Bigger devices
 
 ![snowball_and_snowcone](/img/snowball_and_snowcone.jpg)
 
@@ -43,7 +43,12 @@ Data transfer services are designed to copy or transfer your on-premises data to
     - Store the files you exchange as objects in your Amazon S3 bucket or Amazon EFS file system so that you can extract business insights faster.
     - you pay for only the protocols you have enabled for access to your endpoint and the amount of data transferred over each of these protocols.
     ![dataTransfer_infraestructure](/img/dataTransfer_infraestructure.png)
-- AWS DataSync: Migrate active datasets to AWS. Archive data to free up on-premises storage capacity. Replicate data to AWS for business continuity. Transfer data to the cloud for analysis and processing 
+- AWS DataSync: Migrate active datasets to AWS. Archive data to free up on-premises storage capacity. Replicate data to AWS for business continuity. Transfer data to the cloud for analysis and processing. You can use DataSync to speed up your critical hybrid workflows. Features
+    - DataSync provides built-in security capabilities, such as encryption of data in transit and data integrity verification in transit and at rest. 
+    - Network optimizations performed by DataSync include incremental transfers, in-line compression, and sparse file detection. 
+    - You can use the scheduler to periodically run a data transfer task 
+    - DataSync works natively with AWS security, monitoring, and audit services to make data movement simpler. 
+    - you pay for only the amount of data that you copy: network, managed cloud infraestructure, data validation, and automation capabilities.
 - AWS Snow Family: Offline data transfers because there’s lack of consistent network connectivity.
 - AWS Application Migration Service: highly automated lift-and-shift (rehost) solution.
 
