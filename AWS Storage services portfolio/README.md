@@ -63,7 +63,11 @@ Data protection services provide optional services to meet your data redundancy 
     - EBS, EFS, FSx, S3 and Storage gateway
     - RDS, Aurora, DynamoDB, Neptune and Document DB
 
-- Native Service Snapshot: Snapshots create backup copies of your data. Snapshots are incremental copies of the data. Each snapshot contains all of the information for that point in time that is needed to restore your data.
-- CloudEndure Disaster Recovery: continuously replicates your machines into a low-cost staging area in your target AWS account and preferred Region. Minimizes downtime and data loss by providing fast, reliable recovery of physical, virtual, and cloud-based servers into AWS Cloud. 
+- Native Service Snapshot: Snapshots create backup copies of your data. Snapshots are incremental copies of the data. Each snapshot contains all of the information for that point in time that is needed to restore your data. Snapshots differ from AWS Backup, because they are tightly integrated as part of service functionality. AWS Backup is an external service that works with the core service. This tight integration allows snapshots to be performed without disruption to processing ongoing data requests. Snapshots are stored in a protected part of Amazon S3 as part of the managed service.  Supported services:
+    - EBS: you can back up the data on your Amazon EBS volumes to Amazon S3 by taking point-in-time incremental snapshot copies
+    - FSx for Lustre
+
+- CloudEndure Disaster Recovery: continuously replicates your machines into a low-cost staging area in your target AWS account and preferred Region. Minimizes downtime and data loss by providing fast, reliable recovery of physical, virtual, and cloud-based servers into AWS Cloud. Supported services:
+
 
 
