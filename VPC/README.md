@@ -56,7 +56,64 @@ To activate internet connectivity for your VPC, you must create an internet gate
 #### Virtual private gateway
 A virtual private gateway connects your VPC to another private network.
 When you have both gateways, you can then establish an encrypted virtual private network (VPN) connection between the two sides.
+#### Transit Gateway
+Manage and simplify connections and peering for your Amazon VPCs
 
-### AWS Direct Connect
+## Monitor
+#### Amazon VPC Flow Logs
+#### VPC Traffic Mirroring
+#### Amazon CloudWatch
+
+## Connectivity
+AWS provides services and hybrid connectivity solutions to link your on premises and AWS networks.
+#### AWS Transit Gateway
+Manage and simplify connections and peering for your Amazon VPCs
+#### AWS Cloud WAN
+Connections between on premise network and AWS VPC
+#### AWS PrivateLink
+Establish secure and private connectivity between Amazon VPCs, AWS services within your region or inside another Amazon VPC, and your on premise network. 
+#### AWS Client VPN
+Connect remote team access to AWS and on premises resources.
+#### AWS Site-to-Site VPN
+Connect on premise with AWS VPC
+#### AWS Direct Connect
 To establish a secure physical connection between your on-premises data center and your Amazon VPC, you can use AWS Direct Connect.
 
+## Edge Networking
+On AWS, edge networking services securely transmit your user-facing data with improved latency globally. When you use the AWS edge networking services, your traffic moves off the internet and behind the AWS global network. AWS edge networking services sit at the AWS global edge locations and are configured to connect and deliver data with single-digit millisecond AWS network latency.
+#### Amazon CloudFront
+CDN
+#### Amazon Route53
+DNS
+#### AWS Global Accelerator
+Optimizes user traffic, from the user to the application.
+#### AWS Shield Standard
+Defends traffic from DDoS and malicious web attacks
+#### AWS WAF
+Application protection by using rules.
+
+## Application Networking
+work together to solve your application networking needs.
+#### Amazon API Gateway
+Creates, mantain and secures APIs at any scale
+#### AWS App Mesh
+Connect containers and microservices with application-level networking
+#### AWS Cloud Map
+Discover access to the most recent resources and services
+#### Elastic Load Balancing
+
+## Network Security
+AWS provides your network and application security teams with services that address their particular protection needs and compliance requirements.
+- Protect your environment.
+- Inspect and filter traffic to prevent unauthorized access.
+- Enforce fine-grained security policies at every network control point across your organization.
+- Meet compliance requirements.
+
+#### AWS Firewall manager
+Centralize the way of manage and configure the firewall fules
+#### AWS Shield
+Defends traffic from DDoS and malicious web attacks
+#### AWS WAF
+Protects WebApps from common web exploits
+#### AWS Network Firewall
+Set up network security acces at VPC-level
