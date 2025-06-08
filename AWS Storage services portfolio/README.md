@@ -50,12 +50,19 @@ Data transfer services are designed to copy or transfer your on-premises data to
     - DataSync works natively with AWS security, monitoring, and audit services to make data movement simpler. 
     - you pay for only the amount of data that you copy: network, managed cloud infraestructure, data validation, and automation capabilities.
 - AWS Snow Family: Offline data transfers because there’s lack of consistent network connectivity.
-- AWS Application Migration Service: highly automated lift-and-shift (rehost) solution.
+- AWS Application Migration Service (or CloudEndure Migration): highly automated lift-and-shift (rehost) solution. AWS MGN supports migrations from VMware vSphere, Microsoft Hyper-V, Amazon EC2, and other clouds to AWS. How works:
+    - Implementation begins by installing the AWS Replication Agent on your source servers. After the agent is installed, you can view and define replication settings for AWS staging area.
+    - Replication Servers receive data from the agent running on your source servers and write this data to the staging Amazon EBS volumes. 
+    - After confirming that your launched instances are operating properly on AWS, you can decommission your source servers. , AWS MGN converts your source servers to boot and run natively on AWS automatically
 
 # Data protection services
 Data protection services provide optional services to meet your data redundancy and disaster requirement needs
 
-- AWS Backup: you can centralize and automate data protection across AWS services. Centrally deploy policies to configure, manage, and govern your backup activity across your company’s AWS accounts and resources.
+- AWS Backup: you can centralize and automate data protection across AWS services. Centrally deploy policies to configure, manage, and govern your backup activity across your company’s AWS accounts and resources. Data backup involves the practice of copying data from a primary to a secondary location. you can create backup policies called backup plans. Use the backup plans to define your backup requirements and then apply them to the AWS resources you want backed up. you can apply backup plans to your AWS resources by simply tagging them. You can retain and expire backups. AWS Backup provides a mechanism to meet your organizations needs for data recovery, data retention, disaster recovery, and compliance requirements for a wide range of specific use cases. Supported resources:
+    - EC2
+    - EBS, EFS, FSx, S3 and Storage gateway
+    - RDS, Aurora, DynamoDB, Neptune and Document DB
+
 - Native Service Snapshot: Snapshots create backup copies of your data. Snapshots are incremental copies of the data. Each snapshot contains all of the information for that point in time that is needed to restore your data.
 - CloudEndure Disaster Recovery: continuously replicates your machines into a low-cost staging area in your target AWS account and preferred Region. Minimizes downtime and data loss by providing fast, reliable recovery of physical, virtual, and cloud-based servers into AWS Cloud. 
 
