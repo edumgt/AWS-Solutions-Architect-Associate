@@ -67,7 +67,7 @@ Data protection services provide optional services to meet your data redundancy 
     - EBS: you can back up the data on your Amazon EBS volumes to Amazon S3 by taking point-in-time incremental snapshot copies
     - FSx for Lustre
 
-- CloudEndure Disaster Recovery: continuously replicates your machines into a low-cost staging area in your target AWS account and preferred Region. Minimizes downtime and data loss by providing fast, reliable recovery of physical, virtual, and cloud-based servers into AWS Cloud. Supported services:
+- CloudEndure Disaster Recovery: continuously replicates your machines into a low-cost staging area in your target AWS account and preferred Region. Minimizes downtime and data loss by providing fast, reliable recovery of physical, virtual, and cloud-based servers into AWS Cloud. In the case of a disaster, you can instruct CloudEndure Disaster Recovery to automatically launch thousands of your machines in their fully provisioned state in minutes.
 
 
 
