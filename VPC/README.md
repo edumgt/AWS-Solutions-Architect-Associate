@@ -3,6 +3,7 @@ https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html
 - IPv4: you don’t see an IP address in its binary format. Instead, it’s converted into decimal format in octets and noted as an IPv4 address.
 - CIDR: CIDR notation is a compressed way of representing a range of IP addresses. Specifying a range determines how many IP addresses are available to you. . In AWS, the smallest IP range you can have is /28, which provides 16 IP addresses. The largest IP range you can have is a /16, which provides 65,536 IP addresses.
 - For communications between Amazon VPC, hub-and-spoke topologies(opens in a new tab) are preferred over many-to-many mesh(opens in a new tab)
+- You never need to worry about this router, it just works, and it's managed by AWS to route traffic between subnets in your Amazon VPC. 
 - Networking layers:
     - Layer 3 adds cross networking addressing. 
     - Layer 4 adds the functionality to support the networking used on the internet.
@@ -60,6 +61,7 @@ A common design pattern is to organize resources into different groups and creat
 #### Internet gateway
 To activate internet connectivity for your VPC, you must create an internet gateway to connect your VPC to the internet.
 NAT translates private IP addresses to public IP addresses, ensuring communication out to the internet.
+An Amazon VPC can have one internet gateway(opens in a new tab) at a time, and it is a regional resilient service ensuring high availability. 
 #### Virtual private gateway
 A virtual private gateway connects your VPC to another private network.
 When you have both gateways, you can then establish an encrypted virtual private network (VPN) connection between the two sides.
@@ -73,18 +75,34 @@ Manage and simplify connections and peering for your Amazon VPCs
 
 ## Connectivity
 AWS provides services and hybrid connectivity solutions to link your on premises and AWS networks.
+Hybrid:
+- AWS Direct connect
+- AWS managed VPN
+- AWS Transit Gateway
+- Self-managed VPN
+VPC to VPC:
+- AWS Backbone (public communication)
+- VPC Peering
+- AWS Privatelink
+- AWS transit Gateway
+- VPN
+
 #### AWS Transit Gateway
-Manage and simplify connections and peering for your Amazon VPCs
+Manage and simplify connections and peering for your Amazon VPCs. 
+AWS Transit Gateway creates a one-to-many peering connection through a central hub. Inter-Region peering connects AWS Transit Gateways together using the AWS global network.
+Transit gateways adds scalability, connectivity, better visibility and control, and improved security over peering connections. 
 #### AWS Cloud WAN
 Connections between on premise network and AWS VPC
 #### AWS PrivateLink
-Establish secure and private connectivity between Amazon VPCs, AWS services within your region or inside another Amazon VPC, and your on premise network. 
+Establish secure and private connectivity between Amazon VPCs, AWS services within your region or inside another Amazon VPC, and your on premise network. All without VPC Peering or an Internet Gateway (NAT), and its complexity associated.  There is no need to configure an internet gateway, VPC peering connection, or manage VPC CIDRs. It provides a more secure connection for services across different accounts and Amazon VPCs, with no need for firewall rules, path definitions, or route tables. 
 #### AWS Client VPN
 Connect remote team access to AWS and on premises resources.
 #### AWS Site-to-Site VPN
 Connect on premise with AWS VPC
 #### AWS Direct Connect
 To establish a secure physical connection between your on-premises data center and your Amazon VPC, you can use AWS Direct Connect.
+#### VPC Peering
+VPC peering(opens in a new tab) is a way to link multiple Amazon VPCs together and allows direct communications between two isolated Amazon VPCs using their private IP addresses. This service is not scalable, for scalability use Transit gateway.
 
 ## Edge Networking
 On AWS, edge networking services securely transmit your user-facing data with improved latency globally. When you use the AWS edge networking services, your traffic moves off the internet and behind the AWS global network. AWS edge networking services sit at the AWS global edge locations and are configured to connect and deliver data with single-digit millisecond AWS network latency.
