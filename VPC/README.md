@@ -2,6 +2,7 @@ https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html
 
 - IPv4: you don’t see an IP address in its binary format. Instead, it’s converted into decimal format in octets and noted as an IPv4 address.
 - CIDR: CIDR notation is a compressed way of representing a range of IP addresses. Specifying a range determines how many IP addresses are available to you. . In AWS, the smallest IP range you can have is /28, which provides 16 IP addresses. The largest IP range you can have is a /16, which provides 65,536 IP addresses.
+- For communications between Amazon VPC, hub-and-spoke topologies(opens in a new tab) are preferred over many-to-many mesh(opens in a new tab)
 
 # VPC
 VPC is an isolated network that you create in the AWS Cloud, consist of: VPC name + CIDR + Region
@@ -15,7 +16,8 @@ Every instance must live inside of a VPC
 -   Subnet consist of: VPC + Availability Zone + CIDR. 
 -   A best practice to maintain redundancy and fault tolerance, create at least two subnets configured in two Availability Zones.
 -   AWS reserves five IP addresses in each subnet. These IP addresses are used for: VPC local routing, Domain Name System (DNS), Future use, network broadcast address and network address.
--   Subnets are created in Availability Zone level and can be more than one in each AZ
+-   Subnets are created in Availability Zone level and can be more than one in each AZ.
+-   CIDR provides more granular control of the number of addresses you assign to each subnet.
 
 ## Route Table
 A route table contains a set of rules, called routes, that are used to determine **where network traffic is directed**.
@@ -52,7 +54,8 @@ A common design pattern is to organize resources into different groups and creat
 
 ## Gateways
 #### Internet gateway
-To activate internet connectivity for your VPC, you must create an internet gateway to connect your VPC to the internet
+To activate internet connectivity for your VPC, you must create an internet gateway to connect your VPC to the internet.
+NAT translates private IP addresses to public IP addresses, ensuring communication out to the internet.
 #### Virtual private gateway
 A virtual private gateway connects your VPC to another private network.
 When you have both gateways, you can then establish an encrypted virtual private network (VPN) connection between the two sides.
