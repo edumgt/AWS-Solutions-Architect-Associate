@@ -3,6 +3,10 @@ https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html
 - IPv4: you don’t see an IP address in its binary format. Instead, it’s converted into decimal format in octets and noted as an IPv4 address.
 - CIDR: CIDR notation is a compressed way of representing a range of IP addresses. Specifying a range determines how many IP addresses are available to you. . In AWS, the smallest IP range you can have is /28, which provides 16 IP addresses. The largest IP range you can have is a /16, which provides 65,536 IP addresses.
 - For communications between Amazon VPC, hub-and-spoke topologies(opens in a new tab) are preferred over many-to-many mesh(opens in a new tab)
+- Networking layers:
+    - Layer 3 adds cross networking addressing. 
+    - Layer 4 adds the functionality to support the networking used on the internet.
+    - Layer 7 adds protocols and functions at the software level for applications.
 
 # VPC
 VPC is an isolated network that you create in the AWS Cloud, consist of: VPC name + CIDR + Region
