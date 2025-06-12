@@ -127,9 +127,14 @@ You cannot create a VPC peering connection if the VPCs have matching or overlapp
 If either VPC in a peering relationship has one connection (VPN, Direct, NAT, IGW, VPC Endpoint), you cannot extend the peering relationship to that connection.
 
 #### AWS Transit Gateway
-Manage and simplify connections and peering for your Amazon VPCs. 
-AWS Transit Gateway creates a one-to-many peering connection through a central hub. Inter-Region peering connects AWS Transit Gateways together using the AWS global network.
+Manage and simplify connections and peering for your Amazon VPCs. Provides interconnectivity between VPCs and your on-premises network (With a VPN or Direct Connection).
 Transit gateways adds scalability, connectivity, better visibility and control, and improved security over peering connections. 
+A transit gateway has a default route table and can optionally have additional route tables.
+for routing traffic between VPCs in different Region, transit gateway peering connections have a simpler network design and more consolidated management, compared to VPC Peering.
+
+This removes the need to route traffic over the internet:
+- In a Region, AWS Transit Gateway creates a one-to-many peering connection through a central hub, in a hub-and-spoke network architecture. 
+- Inter-Region peering connects AWS Transit Gateways together using the AWS global network.
 
 ## -----------
 
