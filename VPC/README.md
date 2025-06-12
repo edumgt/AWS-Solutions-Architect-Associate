@@ -98,9 +98,21 @@ Direct connect suports IPv4, IPv6 or both.
 Define the Virtual Interfaces: Private, Public or Transit.
 
 #### AWS Client VPN
-Connect remote team access to AWS and on premises resources.
+AWS Client VPN enables you to securely connect users (or remote teams) to AWS or on-premises networks
+The Client VPN administrator creates and configures a Client VPN endpoint in AWS. Your administrator controls which networks and resources you can access when you establish a VPN connection. 
+Client VPN supports IPv4 traffic only.
+The client CIDR range cannot be changed after you create the Client VPN endpoint. 
+The subnets associated with a Client VPN endpoint must be in the same VPC.
+Client VPN publishes metrics to CloudWatch for your Client VPN endpoints. Metrics are published to CloudWatch every five minutes.
+
 #### AWS Site-to-Site VPN
-Connect on premise with AWS VPC
+AWS Site-to-Site VPN enables you to securely connect your on-premises network to Amazon VPC.
+VPN connection consists of two tunnels. Each tunnel terminates in a different Availability Zone on the AWS side, but it must terminate on the same customer gateway on the customer side. 
+when you connect your VPCs to a common on-premises network, we recommend that you use nonoverlapping CIDR blocks for your networks.
+VPN metric data is automatically sent to CloudWatch as it becomes available.
+
+![vpn_architecture](/img/vpn_architecture.png)
+
 #### AWS Cloud WAN
 Connections between on premise network and AWS VPC
 
