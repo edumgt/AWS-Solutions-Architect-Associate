@@ -91,6 +91,7 @@ VPC to VPC:
 Manage and simplify connections and peering for your Amazon VPCs. 
 AWS Transit Gateway creates a one-to-many peering connection through a central hub. Inter-Region peering connects AWS Transit Gateways together using the AWS global network.
 Transit gateways adds scalability, connectivity, better visibility and control, and improved security over peering connections. 
+
 #### AWS Cloud WAN
 Connections between on premise network and AWS VPC
 #### AWS Client VPN
@@ -99,8 +100,16 @@ Connect remote team access to AWS and on premises resources.
 Connect on premise with AWS VPC
 #### AWS Direct Connect
 To establish a secure physical connection between your on-premises data center and your Amazon VPC, you can use AWS Direct Connect.
+
 #### VPC Peering
-VPC peering(opens in a new tab) is a way to link multiple Amazon VPCs together and allows direct communications between two isolated Amazon VPCs using their private IP addresses. This service is not scalable, for scalability use Transit gateway.
+VPC peering is a way to link multiple Amazon VPCs together and allows direct and private communications between two isolated Amazon VPCs using their private IP addresses across different AWS Regions. This service is not scalable, for scalability use Transit gateway.
+This communication is accomplished using private IP addresses, without requiring gateways, VPN connections, or separate network appliances.
+Traffic never traverses the public internet
+VPC peering connection is nontransitive in nature and does not allow network traffic to pass from one peering connection to another.
+You cannot create a VPC peering connection if the VPCs have matching or overlapping IPv4 CIDR blocks. 
+If either VPC in a peering relationship has one connection (VPN, Direct, NAT, IGW, VPC Endpoint), you cannot extend the peering relationship to that connection.
+
+## -----------
 
 #### VPC EndPoints
 Connects your VPC to supported AWS services and VPC endpoint services.
