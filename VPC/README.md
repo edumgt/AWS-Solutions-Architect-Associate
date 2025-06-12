@@ -93,8 +93,6 @@ AWS Transit Gateway creates a one-to-many peering connection through a central h
 Transit gateways adds scalability, connectivity, better visibility and control, and improved security over peering connections. 
 #### AWS Cloud WAN
 Connections between on premise network and AWS VPC
-#### AWS PrivateLink
-Establish secure and private connectivity between Amazon VPCs, AWS services within your region or inside another Amazon VPC, and your on premise network. All without VPC Peering or an Internet Gateway (NAT), and its complexity associated.  There is no need to configure an internet gateway, VPC peering connection, or manage VPC CIDRs. It provides a more secure connection for services across different accounts and Amazon VPCs, with no need for firewall rules, path definitions, or route tables. 
 #### AWS Client VPN
 Connect remote team access to AWS and on premises resources.
 #### AWS Site-to-Site VPN
@@ -103,6 +101,22 @@ Connect on premise with AWS VPC
 To establish a secure physical connection between your on-premises data center and your Amazon VPC, you can use AWS Direct Connect.
 #### VPC Peering
 VPC peering(opens in a new tab) is a way to link multiple Amazon VPCs together and allows direct communications between two isolated Amazon VPCs using their private IP addresses. This service is not scalable, for scalability use Transit gateway.
+
+#### VPC EndPoints
+Connects your VPC to supported AWS services and VPC endpoint services.
+Resources inside a VPC do not require public IP addresses to communicate with resources outside the VPC.
+Traffic does not leave the Amazon network.
+A VPC endpoint does not require an internet gateway, virtual private gateway, NAT device, VPN connection, or Direct Connect connection. Types:
+- Gateway VPC endpoints: A gateway VPC endpoint targets specific IP routes in a VPC route table in the form of a prefix list.
+- Interface endpoints (Powered by PrivateLink): private IP address from the IP address range of your subnet, which serves as an entry point for traffic destined to a supported AWS service or a VPC endpoint service. When an interface endpoint is created, endpoint-specific DNS hostnames are generated that can be used to communicate with the service. After creating the endpoint, you can submit requests to the provider’s service through one of the following three methods: Endpoint-specific regional DNS hostname, Zonal-specific DNS hostname and Private DNS hostname.
+- Gateway Load Balancer endpoint (Powered by PrivateLink): You specify a Gateway Load Balancer endpoint as a target for a route in a route table. 
+
+#### AWS PrivateLink
+AWS PrivateLink provides a secure and private connection between your VPCs, supported AWS services and your on premise network, AWS PrivateLink gives on-premises networks private access to AWS services through Direct Connect. 
+Avoids exposing traffic to the public internet.
+All without VPC Peering or an Internet Gateway (NAT), and its complexity associated.  There is no need to configure an internet gateway, VPC peering connection, or manage VPC CIDRs. 
+It provides a more secure connection for services across different accounts and Amazon VPCs, with no need for firewall rules, path definitions, or route tables. 
+
 
 ## Edge Networking
 On AWS, edge networking services securely transmit your user-facing data with improved latency globally. When you use the AWS edge networking services, your traffic moves off the internet and behind the AWS global network. AWS edge networking services sit at the AWS global edge locations and are configured to connect and deliver data with single-digit millisecond AWS network latency.
