@@ -136,6 +136,10 @@ This removes the need to route traffic over the internet:
 - In a Region, AWS Transit Gateway creates a one-to-many peering connection through a central hub, in a hub-and-spoke network architecture. 
 - Inter-Region peering connects AWS Transit Gateways together using the AWS global network.
 
+#### VPC Peering Vs Transit Gateway
+VPC peering connections, unlike transit gateways, have no aggregate bandwidth restriction. 
+transit gateway will incur a VPC connection and data transmission charge. VPC peering connections only incur a data transmission charge. 
+
 ## -----------
 
 #### VPC EndPoints
