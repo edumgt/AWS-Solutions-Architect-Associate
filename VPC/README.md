@@ -2,7 +2,7 @@ https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html
 
 - IPv4: you don’t see an IP address in its binary format. Instead, it’s converted into decimal format in octets and noted as an IPv4 address.
 - CIDR: CIDR notation is a compressed way of representing a range of IP addresses. Specifying a range determines how many IP addresses are available to you. . In AWS, the smallest IP range you can have is /28, which provides 16 IP addresses. The largest IP range you can have is a /16, which provides 65,536 IP addresses.
-- For communications between Amazon VPC, hub-and-spoke topologies(opens in a new tab) are preferred over many-to-many mesh(opens in a new tab)
+- For communications between Amazon VPC, hub-and-spoke topologies are preferred over many-to-many mesh
 - You never need to worry about this router, it just works, and it's managed by AWS to route traffic between subnets in your Amazon VPC. 
 - Networking layers:
     - Layer 3 adds cross networking addressing. 
@@ -127,7 +127,7 @@ You cannot create a VPC peering connection if the VPCs have matching or overlapp
 If either VPC in a peering relationship has one connection (VPN, Direct, NAT, IGW, VPC Endpoint), you cannot extend the peering relationship to that connection.
 
 #### AWS Transit Gateway
-Manage and simplify connections and peering for your Amazon VPCs. Provides interconnectivity between VPCs and your on-premises network (With a VPN or Direct Connection).
+Manage and simplify connections and peering for your Amazon VPCs. Provides interconnectivity between VPCs and your on-premises network (With a VPN or Direct Connection), such as a hub-and-spokes architecture. Where the Transit Gateway is the hub and the vpcs, VPN and Direct connections are the spokes. 
 Transit gateways adds scalability, connectivity, better visibility and control, and improved security over peering connections. 
 A transit gateway has a default route table and can optionally have additional route tables.
 for routing traffic between VPCs in different Region, transit gateway peering connections have a simpler network design and more consolidated management, compared to VPC Peering.
