@@ -96,6 +96,7 @@ There are tree types od Ethernet connections: 1 gb per second, 10 gb per second 
 Connection is stablished with BGP and optional BFD.
 Direct connect suports IPv4, IPv6 or both.
 Define the Virtual Interfaces: Private, Public or Transit.
+Setup two Routers in the AWS Direct connect location for Highly available hybrid network connections. This eliminate the single points of failure when you have only one router in the AWS Direct Connect Location.
 
 #### AWS Client VPN
 AWS Client VPN enables you to securely connect users (or remote teams) to AWS or on-premises networks
