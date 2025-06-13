@@ -129,14 +129,15 @@ If either VPC in a peering relationship has one connection (VPN, Direct, NAT, IG
 With VPC Peering you can replicate data from one VPC to another and the traffic never traverses the public internet,
 
 #### AWS Transit Gateway
-Manage and simplify connections and peering for your Amazon VPCs. Provides interconnectivity between VPCs and your on-premises network (With a VPN or Direct Connection), such as a hub-and-spokes architecture. Where the Transit Gateway is the hub and the vpcs, VPN and Direct connections are the spokes. 
+Manage and simplify connections and peering for your Amazon VPCs. Provides interconnectivity between VPCs and your on-premises network (With a VPN or Direct Connection), such as a hub-and-spokes architecture. 
 Transit gateways adds scalability, connectivity, better visibility and control, and improved security over peering connections. 
 A transit gateway has a default route table and can optionally have additional route tables.
 for routing traffic between VPCs in different Region, transit gateway peering connections have a simpler network design and more consolidated management, compared to VPC Peering.
+Transit gateways are a regional service and support a hub-and-spoke network design within the Region in which they are deployed. 
 
 This removes the need to route traffic over the internet:
-- In a Region, AWS Transit Gateway creates a one-to-many peering connection through a central hub, in a hub-and-spoke network architecture. 
-- Inter-Region peering connects AWS Transit Gateways together using the AWS global network.
+- In a Region, AWS Transit Gateway creates a one-to-many peering connection through a central hub, in a hub-and-spoke network architecture. Where the Transit Gateway is the hub and the vpcs, VPN and Direct connections are the spokes. 
+- Inter-Region peering connects all AWS Transit Gateways together using the AWS global network and each Transit Gateway is connected to their VPCs in their respective region. Transit gateway inter-Region peering is nontransitive.
 
 #### VPC Peering Vs Transit Gateway
 VPC peering connections, unlike transit gateways, have no aggregate bandwidth restriction. 
