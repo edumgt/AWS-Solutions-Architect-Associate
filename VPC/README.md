@@ -126,6 +126,7 @@ Traffic never traverses the public internet
 VPC peering connection is nontransitive in nature and does not allow network traffic to pass from one peering connection to another.
 You cannot create a VPC peering connection if the VPCs have matching or overlapping IPv4 CIDR blocks. 
 If either VPC in a peering relationship has one connection (VPN, Direct, NAT, IGW, VPC Endpoint), you cannot extend the peering relationship to that connection.
+With VPC Peering you can replicate data from one VPC to another and the traffic never traverses the public internet,
 
 #### AWS Transit Gateway
 Manage and simplify connections and peering for your Amazon VPCs. Provides interconnectivity between VPCs and your on-premises network (With a VPN or Direct Connection), such as a hub-and-spokes architecture. Where the Transit Gateway is the hub and the vpcs, VPN and Direct connections are the spokes. 
