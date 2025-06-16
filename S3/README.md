@@ -100,7 +100,13 @@ S3 Batch Operations:
         - Prefixes and tags
         - Exports
     Knowing this usage information allows you to configure an S3 Lifecycle policy to make the data transfer to the appropriate storage class and saving costs in the way.
+    A lifecycle policy is a rule that moves or delete objects between storage classes based on the object create date.
+    ![s3_life_cycle](/img/s3_life_cycle.jpg)
+    Amazon S3 does not transition objects between storage classes if they are smaller than 128 KB because it's not cost effective to do so.
     - Unpredictable workloads: Amazon S3 Intelligent-Tiering
 -  Knowing which storage class your data currently occupies is the first step in identifying if the storage class is the right storage class for your data.
 
-Using Amazon S3 inventory, Amazon S3 Server access logging and AWS CloudTrail together allows you to determine if objects are being put to S3, but never accessed. Once that determination is made, objects that are never accessed can be moved to archived tiers for storage cost savings.
+Tips:
+- Using Amazon S3 inventory, Amazon S3 Server access logging and AWS CloudTrail together allows you to determine if objects are being put to S3, but never accessed. Once that determination is made, objects that are never accessed can be moved to archived tiers for storage cost savings.
+- Objects in S3 Intelligent-Tiering, S3 Standard-IA, and S3 One Zone-IA storage are charged for a minimum storage duration of 30 days
+- Multipart uploads accelerate the uploading of large objects (size is over 100 MB) by splitting them into parts that are then uploaded in parallel. A Lifecycle rule can be configured to automatically remove incomplete uploads.
