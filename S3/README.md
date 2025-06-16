@@ -47,6 +47,7 @@ Use case:
 Security:
 - Amazon S3 is private by default.
 - You can choose to make your buckets and objects public. 
+- Amazon S3 Server access logging provides detailed records for the requests that are made to a bucket. or use CloudTrail provides event history of your AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services.
 - Controlled access (with access policy):
     - IAM Policy: which are attached to resources and users
     - S3 bucket policies: This can only be attached to S3 buckets. S3 bucket policies specify what actions are allowed or denied on the bucket.
@@ -87,3 +88,14 @@ S3 Batch Operations:
 - Replace object tag sets
 - Modify access controls,
 - Restore archived objects from Amazon S3 Glacier
+
+# S3 Cost Optimization
+
+- You need to understand your workloads, and define your application performance and data access requirements. 
+- Organizing data allows you to filter groups of objects together for optimized storage and analysis by tags, prefixes, or both. An effective organization strategy improves data visibility by allowing granular and precise insights into your usage and cost spending based on your applications, projects, or teams
+- Knowing your data access patterns allows you to make informed decisions about which storage class best suits your data, for performance and cost.
+    - Predictable workloads: Amazon S3 Storage Class Analysis to configure an S3 Lifecycle policy to make the data transfer to the appropriate storage class.
+    - Unpredictable workloads: Amazon S3 Intelligent-Tiering
+-  Knowing which storage class your data currently occupies is the first step in identifying if the storage class is the right storage class for your data.
+
+Using Amazon S3 inventory, Amazon S3 Server access logging and AWS CloudTrail together allows you to determine if objects are being put to S3, but never accessed. Once that determination is made, objects that are never accessed can be moved to archived tiers for storage cost savings.
