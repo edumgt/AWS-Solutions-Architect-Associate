@@ -94,11 +94,12 @@ S3 Batch Operations:
 - You need to understand your workloads, and define your application performance and data access requirements. 
 - Organizing data allows you to filter groups of objects together for optimized storage and analysis by tags, prefixes, or both. An effective organization strategy improves data visibility by allowing granular and precise insights into your usage and cost spending based on your applications, projects, or teams
 - Knowing your data access patterns allows you to make informed decisions about which storage class best suits your data, for performance and cost.
-    - Predictable workloads: Amazon S3 Storage Class Analysis to  how much of your data is hot, warm, and cold. This Allows you to configure an S3 Lifecycle policy to make the data transfer to the appropriate storage class. It also provides daily visualizations of your storage usage on the AWS Management Console that you can export to an S3 bucket to analyze using business intelligence tools of your choice. 
+    - Predictable workloads: Amazon S3 Storage Class Analysis to  how much of your data is hot, warm, and cold. It also provides daily visualizations of your storage usage on the AWS Management Console that you can export to an S3 bucket to analyze using business intelligence tools of your choice like Amazon Quicksigth. 
     You can analyze objects based on:
         - Bucket
         - Prefixes and tags
         - Exports
+    Knowing this usage information allows you to configure an S3 Lifecycle policy to make the data transfer to the appropriate storage class and saving costs in the way.
     - Unpredictable workloads: Amazon S3 Intelligent-Tiering
 -  Knowing which storage class your data currently occupies is the first step in identifying if the storage class is the right storage class for your data.
 
