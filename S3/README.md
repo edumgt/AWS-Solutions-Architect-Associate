@@ -63,9 +63,11 @@ Amazon S3 storage classes let you change your storage tier when your data charac
 - S3 Intelligent-Tiering: Amazon S3 monitors access patterns of your data and automatically moves your data to the most cost-effective storage tier based on frequency of access. There are three tiers: a frequent access tier, an infrequent access tier, and an archive instance access tier.
 - Standard-Infrequent Access: data that is accessed less frequently but requires rapid access when needed
 - One Zone-Infrequent Access: lower-cost option for infrequently accessed data, but do not require the availability and resilience of S3 Standard or S3 Standard-IA
-- Glacier Instant Retrieval: archiving data that is rarely accessed and requires millisecond retrieval
-- Glacier Flexible Retrieval: archived data that is accessed 1–2 times per year and retrieved in minutes.
-- Glacier Deep Archive: lowest-cost Amazon S3 storage class. Data accessed once or twice a year with a retrieval time of 12 hours
+- Glacier Instant Retrieval: archiving data that is rarely accessed and requires millisecond retrieval with a fee per GB. Data is stored across three or more AWS Availability Zones.
+- Glacier Flexible Retrieval: archived data that is accessed 1–2 times per year and retrieved in minutes. Data is stored across three or more AWS Availability Zones. Minimum storage duration of 90 days. There are two types: 
+    - Free bulk retrievals (5h - 12h) 
+    - non-bulk retrievals (Expedited with 1-5 min and Standard with 3-5 h) with a Retrieval fee per GB. 
+- Glacier Deep Archive: lowest-cost Amazon S3 storage class. Data accessed once or twice a year with a retrieval time of 12 hours and retrieval fee per GB. Data is stored across three or more AWS Availability Zones. Minimum duration requirement of 180 days of storage
 - S3 on Outposts: Amazon S3 on Outposts delivers object storage to your on-premises AWS Outposts environment using S3 API's and features
 
 
@@ -110,3 +112,5 @@ Tips:
 - Using Amazon S3 inventory, Amazon S3 Server access logging and AWS CloudTrail together allows you to determine if objects are being put to S3, but never accessed. Once that determination is made, objects that are never accessed can be moved to archived tiers for storage cost savings.
 - Objects in S3 Intelligent-Tiering, S3 Standard-IA, and S3 One Zone-IA storage are charged for a minimum storage duration of 30 days
 - Multipart uploads accelerate the uploading of large objects (size is over 100 MB) by splitting them into parts that are then uploaded in parallel. A Lifecycle rule can be configured to automatically remove incomplete uploads.
+- With S3 Glacier you can retain more data for longer periods of time at a lower storage cost
+- AWS Storage Gateway allows businesses with on-premises data centers to use Amazon S3 for backups or long-term retention.
