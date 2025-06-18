@@ -114,3 +114,4 @@ Tips:
 - Multipart uploads accelerate the uploading of large objects (size is over 100 MB) by splitting them into parts that are then uploaded in parallel. A Lifecycle rule can be configured to automatically remove incomplete uploads.
 - With S3 Glacier you can retain more data for longer periods of time at a lower storage cost
 - AWS Storage Gateway allows businesses with on-premises data centers to use Amazon S3 for backups or long-term retention.
+- Amazon S3 Storage Lens provides organization-wide visibility into object storage usage and activity trends. S3 Storage Lens provides metrics pre-aggregated by up to six levels, beginning with the account, Region, storage class, and bucket.  You can  use the default or custom dashboard to visualize insights and trends, flag outliers, and it provides recommendations for optimizing storage costs and applying data protection best practices. 
