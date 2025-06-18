@@ -116,4 +116,4 @@ Tips:
 - AWS Storage Gateway allows businesses with on-premises data centers to use Amazon S3 for backups or long-term retention.
 - Amazon S3 Storage Lens provides organization-wide visibility into object storage usage and activity trends. S3 Storage Lens provides metrics pre-aggregated by up to six levels, beginning with the account, Region, storage class, and bucket.  You can  use the default or custom dashboard to visualize insights and trends, flag outliers, and it provides recommendations for optimizing storage costs and applying data protection best practices. 
 - Alarms allow you to watch CloudWatch metrics and to receive notifications when the metrics fall outside of the levels (high or low thresholds) that you configure. You can attach multiple alarms to each metric and each one can automatically initiate actions on your behalf. 
-
+- AWS Budgets gives you the ability to set custom budgets that alert you when your costs or usage exceed (or are forecasted to exceed) your budgeted amount.
