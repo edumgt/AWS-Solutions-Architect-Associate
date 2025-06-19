@@ -15,11 +15,24 @@ You can invoke your function directly by using the Lambda API, or you can config
 
 Triggers describe when a Lambda function should run. A trigger integrates your Lambda function with other AWS services and event source mappings.
 
-An event is a JSON-formatted document that contains data for a Lambda function to process. The runtime converts the event to an object and passes it to your function code. 
+The Lambda function handler is the method in your function code that processes events. The handler method takes two objects:
+- Event object: parameters provided to your handler function. An event is a JSON-formatted document that contains data for a Lambda function to process. The runtime converts the event to an object and passes it to your function code. 
+- Context object (optional): Lambda execution environment.
+Writting code best practices:
+- Separate the business logic from the handler method.
+- Make your functions modular 
+- It is particularly important for serverless applications to treat each function as stateless.
+- Should include logging statements
+- Functions must give Lambda information about the results of their actions.
+- You can use environment variables to store sensitive information required by the function.
+- AWS Secrets Manager helps you organize and manage important configuration data such as credentials, passwords, and license keys.
+
 
 You deploy your Lambda function code using a deployment package. Lambda supports two types of deployment packages:
 - A .zip file archive – This contains your function code and its dependencies. Lambda provides the operating system and runtime for your function.
 - A container image – This is compatible with the Open Container Initiative (OCI) specification. You add your function code and dependencies to the image. You must also include the operating system and a Lambda runtime.
+
+AWS SAM is an open-source framework for building serverless applications. It provides shorthand syntax to express functions, APIs, databases, and event source mappings. It is an extension of CloudFormation and transform the instruction into a CloudFormation template. You can install the AWS SAM CLI locally to help test your serverless applications, validate your AWS SAM templates, and streamline your deployments.
 
 Pricing: You are charged for the number of times that your code is invoked (requests) and for the time that your code runs
 
