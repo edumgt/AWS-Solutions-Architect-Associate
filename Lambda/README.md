@@ -48,3 +48,12 @@ Best practice: Write functions to take advantage of warm starts
 3. Add code to check for and reuse existing connections.
 4. Use tmp space as transient cache.
 5. Check that background processes have completed.
+
+Permissions to invoke the function are controlled using an IAM resource-based policy. An **IAM execution role** defines the permissions that control what the function is allowed to do when interacting with other AWS services. 
+
+Apply the principle of least privilege with IAM Access Analyzer, which reviews your AWS CloudTrail logs over the date range that you specify and generates a policy template with only the permissions that the function used during that time.
+
+### Networking
+Enabling your Lambda function to access resources inside your virtual private cloud (VPC) requires additional VPC-specific configuration information, such as VPC subnet IDs and security group IDs.
+
+To establish a private connection between your VPC and Lambda, create an interface VPC endpoint (powered by AWS PrivateLink). Private connection without an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection. 
