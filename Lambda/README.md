@@ -15,6 +15,22 @@ You can invoke your function directly by using the Lambda API, or you can config
 
 Triggers describe when a Lambda function should run. A trigger integrates your Lambda function with other AWS services and event source mappings.
 
+This service is not for long-running proceses like deep learning or batch jobs. If an application needs to run longer than 15 minutes, it's no longer cost effective to use Lambda. Instead, consider other solutions.
+
+Lambda runs your function in multiple Availability Zones to ensure that it is available to process events in case of a service interruption in a single zone. 
+
+### Performance and costs
+These settings are important in defining how each function performs: memory, timeout, and concurrency. As you monitor your functions, you must adjust the settings to optimize costs and ensure the desired customer experience with your application.
+- Any increase in memory size triggers an equivalent increase in CPU available to your function. To find the right memory configuration for your functions, use the AWS Lambda Power Tuning tool.
+- A single invocation of a Lambda function cannot run longer than 900 seconds (which is 15 minutes). Avoiding lengthy timeouts for functions can prevent you from being billed while a function is simply waiting to time out.
+- Lambda functions also have a concurrency limit (1000) and a reservation system that can be used to set aside runtime for specific instances. No charge is incurred for configuring reserved concurrency for a function. 
+- Provisioned concurrency is an option used when you need high performance and low latency, because enviroment are prepared to respond immediately to your function's invocations.. You pay for the amount of provisioned concurrency that you configure and for the period of time that you have it configured. 
+- CloudWatch includes two built-in metrics that help determine concurrency: ConcurrentExecutions and UnreservedConcurrentExecutions.
+
+Pricing: You are charged based on the number of requests for your functions and the duration. Price also depends on the amount of memory you allocate to your function, not the amount of memory your function uses. The AWS Lambda Free Tier includes 1 million free requests per month and 400,000 GB-seconds of compute time per month.
+
+
+### Code
 The Lambda function handler is the method in your function code that processes events. The handler method takes two objects:
 - Event object: parameters provided to your handler function. An event is a JSON-formatted document that contains data for a Lambda function to process. The runtime converts the event to an object and passes it to your function code. 
 - Context object (optional): Lambda execution environment.
@@ -27,20 +43,13 @@ Writting code best practices:
 - You can use environment variables to store sensitive information required by the function.
 - AWS Secrets Manager helps you organize and manage important configuration data such as credentials, passwords, and license keys.
 
-
 You deploy your Lambda function code using a deployment package. Lambda supports two types of deployment packages:
 - A .zip file archive – This contains your function code and its dependencies. Lambda provides the operating system and runtime for your function.
 - A container image – This is compatible with the Open Container Initiative (OCI) specification. You add your function code and dependencies to the image. You must also include the operating system and a Lambda runtime.
 
 AWS SAM is an open-source framework for building serverless applications. It provides shorthand syntax to express functions, APIs, databases, and event source mappings. It is an extension of CloudFormation and transform the instruction into a CloudFormation template. You can install the AWS SAM CLI locally to help test your serverless applications, validate your AWS SAM templates, and streamline your deployments.
 
-Pricing: You are charged for the number of times that your code is invoked (requests) and for the time that your code runs
-
-This service is not for long-running proceses like deep learning or batch jobs. If an application needs to run longer than 15 minutes, it's no longer cost effective to use Lambda. Instead, consider other solutions.
-
-Lambda runs your function in multiple Availability Zones to ensure that it is available to process events in case of a service interruption in a single zone. 
-
-Use case: 
+### Use case
 - small, simple, or modular application
 - applications less compute intensive
 - Serverless is a very appropriate fit when you need one action to invoke other workflows within AWS.
