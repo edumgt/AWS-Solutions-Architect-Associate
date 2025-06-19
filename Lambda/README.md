@@ -23,7 +23,7 @@ Lambda runs your function in multiple Availability Zones to ensure that it is av
 These settings are important in defining how each function performs: memory, timeout, and concurrency. As you monitor your functions, you must adjust the settings to optimize costs and ensure the desired customer experience with your application.
 - Any increase in memory size triggers an equivalent increase in CPU available to your function. To find the right memory configuration for your functions, use the AWS Lambda Power Tuning tool.
 - A single invocation of a Lambda function cannot run longer than 900 seconds (which is 15 minutes). Avoiding lengthy timeouts for functions can prevent you from being billed while a function is simply waiting to time out.
-- Lambda functions also have a concurrency limit (1000) and a reservation system that can be used to set aside runtime for specific instances. No charge is incurred for configuring reserved concurrency for a function. 
+- Lambda functions also have a Regional concurrency limit (1000) and a reservation system that can be used to set aside runtime for specific instances. No charge is incurred for configuring reserved concurrency for a function. 
 - Provisioned concurrency is an option used when you need high performance and low latency, because enviroment are prepared to respond immediately to your function's invocations.. You pay for the amount of provisioned concurrency that you configure and for the period of time that you have it configured. 
 - CloudWatch includes two built-in metrics that help determine concurrency: ConcurrentExecutions and UnreservedConcurrentExecutions.
 
