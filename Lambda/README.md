@@ -4,8 +4,12 @@ https://aws.amazon.com/blogs/compute/best-practices-for-organizing-larger-server
 # AWS Lambda
 AWS Lambda is an event-driven, serverless compute service that lets you run code without provisioning or managing servers.
 
+Lambda functions are stateless, with no affinity to the underlying infrastructure. Lambda can rapidly launch as many copies of the function as needed to scale to the rate of incoming events.
+
 Lambda runs your code on a high availability compute infrastructure and requires no administration from the user. 
 You upload your source code in one of the languages that Lambda supports, and Lambda takes care of everything required to run and scale your code with high availability. 
+
+In event-driven architectures, events are the primary mechanism for sharing information across services.
 
 You can invoke your function directly by using the Lambda API, or you can configure an AWS service or resource to invoke your function in response to an event.
 
