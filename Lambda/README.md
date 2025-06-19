@@ -32,3 +32,19 @@ Use case:
 - applications less compute intensive
 - Serverless is a very appropriate fit when you need one action to invoke other workflows within AWS.
 - applications that don't run longer than 15 minutes.
+
+### Invocation models for running Lambda functions
+It's important to understand how each invocation model initializes functions and handles errors and retries. 
+
+- Synchronous invocation: Lambda runs the function and waits for a response. There are no built-in retries. You must manage your retry strategy within your application code. Invoke Services: API Gateway, Cognito, Alexa, Lex, CloudFront.
+- Asynchronous invocation: Events are queued and the requestor doesn't wait for the function to complete. A destination can send records of asynchronous invocations to other services. There are Built in – retries twice. Invoke Services: SNS, S3 and EventBridge.
+- Polling invocation: AWS will manage the poller on your behalf and perform synchronous invocations of your function. Invoke services: Kinesis, SQS and DynamoDB Streams.
+
+Provisioned concurrency is a Lambda feature that prepares concurrent execution environments before invocations and ensures the lowest possible latency. Useful to avoid the case when the environment is not already initialized, the start-up time of the environment adds to latency. 
+
+Best practice: Write functions to take advantage of warm starts
+1. Store and reference dependencies locally.
+2. Limit re-initialization of variables.
+3. Add code to check for and reuse existing connections.
+4. Use tmp space as transient cache.
+5. Check that background processes have completed.
