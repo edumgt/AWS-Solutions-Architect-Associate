@@ -49,6 +49,19 @@ You deploy your Lambda function code using a deployment package. Lambda supports
 
 AWS SAM is an open-source framework for building serverless applications. It provides shorthand syntax to express functions, APIs, databases, and event source mappings. It is an extension of CloudFormation and transform the instruction into a CloudFormation template. You can install the AWS SAM CLI locally to help test your serverless applications, validate your AWS SAM templates, and streamline your deployments.
 
+In a serverless deployment, you provide all the components necessary to deploy your function: 
+- Code, bundled with any necessary dependencies
+- CloudFormation template, which is the blueprint for building the serverless environment
+
+##### AWS Code Deploy
+You can also use routing configuration on an alias to send a portion of traffic to a second function version. 
+
+Lambda is integrated with AWS CodeDeploy for automated rollout with traffic shifting. CodeDeploy supports multiple traffic shifting methods:
+- Canary 
+- Linear
+- All-at-once
+When the alarms or hooks trigger a rollback, everything in the CloudFormation template being deployed is rolled back. 
+
 ### Use case
 - small, simple, or modular application
 - applications less compute intensive
