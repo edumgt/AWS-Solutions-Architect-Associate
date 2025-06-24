@@ -29,7 +29,6 @@ These settings are important in defining how each function performs: memory, tim
 
 Pricing: You are charged based on the number of requests for your functions and the duration. Price also depends on the amount of memory you allocate to your function, not the amount of memory your function uses. The AWS Lambda Free Tier includes 1 million free requests per month and 400,000 GB-seconds of compute time per month.
 
-
 ### Code
 The Lambda function handler is the method in your function code that processes events. The handler method takes two objects:
 - Event object: parameters provided to your handler function. An event is a JSON-formatted document that contains data for a Lambda function to process. The runtime converts the event to an object and passes it to your function code. 
@@ -92,3 +91,21 @@ Apply the principle of least privilege with IAM Access Analyzer, which reviews y
 Enabling your Lambda function to access resources inside your virtual private cloud (VPC) requires additional VPC-specific configuration information, such as VPC subnet IDs and security group IDs.
 
 To establish a private connection between your VPC and Lambda, create an interface VPC endpoint (powered by AWS PrivateLink). Private connection without an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection. 
+
+### Monitoring
+
+- requests, duration per requests and requests with error. The number of times that a process failed because of concurrency limits. ConcurrentExecutions: UnreservedConcurrentExecutions and ProvisionedConcurrentExecutions 
+- Your Lambda functions send trace data to X-Ray, and X-Ray processes the data to generate a service map and searchable trace summaries
+    ![trace_lambda_cold_start](/img/trace_lambda_cold_start.png)
+    ![trace_lambda_billed](/img/trace_lambda_billed.png)
+
+    start enviroment + initialize function = Cold Start
+
+    Thaw enviroment = Warm Start
+
+    ![trace_lambda_billed_warm](/img/trace_lambda_billed_warm.png)
+
+    Billing duration is reduced by using Warm Start. 
+
+- If an order fails, you cannot ignore that order error. You move that error into the dead-letter queue and manually look at the queue and fix the problems. Interact with SQS (Queue) or SNS (topic)
+- AWS CloudTrail helps audit your application by recording all the API actions made against the application. These logs can be exported to the analysis tool of your choice for additional analysis. 
