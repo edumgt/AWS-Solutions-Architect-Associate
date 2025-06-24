@@ -1,5 +1,6 @@
 https://aws.amazon.com/lambda/serverless-architectures-learn-more/
 https://aws.amazon.com/blogs/compute/best-practices-for-organizing-larger-serverless-applications/
+https://d1.awsstatic.com/whitepapers/AWS_Serverless_Multi-Tier_Architectures.pdf
 
 # AWS Lambda
 AWS Lambda is an event-driven, serverless compute service that lets you run code without provisioning or managing servers.
