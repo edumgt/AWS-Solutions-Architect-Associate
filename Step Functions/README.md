@@ -22,6 +22,16 @@ Type of states:
 - Fail: stops the activity of the state machine and marks it as a failure, unless it is caught by a Catch block.
 - Parallel: can be used to create parallel branches of activity
 - Map: can be used to run a set of steps for each element of an input array.
+- Intrinsic functions for basic operations without Task states. This can be used to help Payload Builders process the data going to and from Task Resources:
+    - States.Format:
+    - States.StringToJson:
+    - States.JsonToString:
+    - States.Array:
+
+The Step Functions console provides a graphical representation of that state machine to help visualize your application logic.
+The Amazon States Language is a JSON-based, structured language used to define your state machine
+
+Step Functions, when invoked, receives a JSON text as input and passes that input to the first state in the workflow. Individual states receive JSON as input and usually pass JSON as output to the next state.
 
 ### Features
 - Auto-Scaling
