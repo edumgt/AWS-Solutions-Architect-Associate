@@ -46,3 +46,7 @@ Step Functions, when invoked, receives a JSON text as input and passes that inpu
 - Logs history: AWS Step Functions delivers real-time diagnostics and dashboards, integrates with Amazon CloudWatch and AWS CloudTrail, and logs every execution
 - Visual monitoring
 - High volume orchestration: supports event rates greater than 100,000 per second
+
+### Security
+
+IAM + Permissions = invoke a step functon
