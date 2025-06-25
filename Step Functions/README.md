@@ -55,3 +55,9 @@ You cannot change the workflow type after you have created your state machine.
 
 ### Security
 IAM + Permissions = invoke a step functon
+
+### Use case
+- Data processing
+- IT Automation: CI/CD, synchronize data and event-driven applications
+- E-commerce
+- Web application
