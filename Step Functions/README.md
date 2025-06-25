@@ -34,6 +34,12 @@ The Amazon States Language is a JSON-based, structured language used to define y
 
 Step Functions, when invoked, receives a JSON text as input and passes that input to the first state in the workflow. Individual states receive JSON as input and usually pass JSON as output to the next state.
 
+##### Work flow type
+You cannot change the workflow type after you have created your state machine.
+- Standard Workflows are ideal for long-running, durable, and auditable workflows. 
+- Express Workflows are ideal for high-volume, event-processing workloads such as IoT data ingestion, streaming data processing and transformation, and mobile application backends. There are two types of Express Workflows, asynchronous and synchronous.
+![type_step_functions](/img/type_step_functions.png)
+
 ### Features
 - Auto-Scaling
 - High availability: AWS Step Functions has built-in fault tolerance and maintains service capacity across multiple Availability Zones in each region to protect applications against individual machine or data center failures
@@ -48,5 +54,4 @@ Step Functions, when invoked, receives a JSON text as input and passes that inpu
 - High volume orchestration: supports event rates greater than 100,000 per second
 
 ### Security
-
 IAM + Permissions = invoke a step functon
