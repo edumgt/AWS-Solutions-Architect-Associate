@@ -41,3 +41,5 @@ Backup data:
 It is advisable to deploy both backup options. Automated backups are beneficial for point-in-time recovery. With manual snapshots, you can retain backups for longer than 35 days.
 - Automated backups (by default): set the  backup window during a time when your database experiences little activity because it can cause increased latency and downtime. The benefit of automated backups that you can do point-in-time recovery.
 - Manual snapshot: If you want to keep your automated backups longer than 35 days, use manual snapshots. Manual snapshots are similar to taking Amazon EBS snapshots, except you manage them in the Amazon RDS console. 
+
+With Amazon RDS, you can manage common database administration tasks like OS patching, database updates, and backups

@@ -5,6 +5,8 @@ https://aws.amazon.com/dynamodb/#
 DynamoDB is a fully managed NoSQL
 tight integration with infrastructure as code (IaC)
 OLTP
+key-value
+non-relational database
 pricing: storage/read/write
 serveless
 Scale up or scale down your tables
